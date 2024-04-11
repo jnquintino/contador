@@ -35,6 +35,9 @@ export class AppComponent implements OnInit {
     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    return `${days} dias ${hours} horas ${minutes} minutos ${seconds} segundos`;
+    return days + (days > 1 ? ' dias ' : ' dia ') +
+      hours + (hours > 1 ? ' horas ' : ' hora ') +
+      minutes + (minutes > 1 ? ' minutos ' : ' minuto ') +
+      seconds + (seconds > 1 ? ' segundos' : ' segundo');
   }
 }
