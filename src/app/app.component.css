@@ -1,0 +1,11 @@
+div {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  color: #333;
+  margin: 20% 30%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
