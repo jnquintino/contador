@@ -31,11 +31,13 @@ export class AppComponent implements OnInit {
 
   private contador(now: Date) {
     const timeLeft = this.finish.getTime() - now.getTime();
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const years = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 365));
+    const days = Math.floor((timeLeft % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    return days + (days === 1 ? ' dias ' : ' dia ') +
+    return years + (years !== 1 ? ' anos ' : ' anno ') +
+      days + (days !== 1 ? ' dias ' : ' dia ') +
       hours + (hours !== 1 ? ' horas ' : ' hora ') +
       minutes + (minutes !== 1 ? ' minutos ' : ' minuto ') +
       seconds + (seconds !== 1 ? ' segundos' : ' segundo');
